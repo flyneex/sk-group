@@ -1,0 +1,117 @@
+// @import '_varmixins.scss';
+
+.bg-projects {
+    background: url(../img/project-img.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    @include flex();
+    &::before {
+        @include darken();
+    }
+    h1 {
+        padding: 229px 0 193px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 65px;
+        line-height: 78px;
+        text-transform: uppercase;
+        color: $white;
+        z-index: 1;
+        &::after {
+            content: '';
+            display: block;
+            width: 51px;
+            height: 1px;
+            background-color: $white;
+            margin: 33px auto 0;
+        }
+    }
+}
+
+// .slide4 {
+//     display: grid;
+//     grid-template-columns: 60% 40%;
+//     grid-template-rows: 1fr 1fr;
+//     grid-auto-flow: dense;
+//     gap: 30px;
+// }
+// .indoor1, .indoor4 {
+//     grid-column: span 2;
+// }
+
+.slide41,
+.slide42 {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.slide41 .indoor1 {
+    width: 60%;
+}
+.slide41 .indoor2 {
+    width: 40%;
+}
+.slide42 .indoor3 {
+    width: 40%;
+}
+.slide42 .indoor4 {
+    width: 60%;
+}
+
+.slide4 img {
+    max-width: 100%;
+}
+
+.cont .swiper {
+    margin-left: 57px;
+}
+
+#indoor .swiper,
+#office .swiper,
+#bathroom .swiper {
+    margin-bottom: 185px!important;
+}
+
+
+.swiper.swiper-office img {
+    width: 100%;
+}
+
+.swiper-pagination5,
+.swiper-pagination6,
+.swiper-pagination7 {
+    display: none;
+}
+
+.slide4 img {
+    max-width: 100%;
+}
+
+@media (max-width: 580px) {
+    #breadcrumbs.bg-projects h1 {
+        font-size: 36px;
+        line-height: 55px;
+        text-align: center;
+        padding: 30px 0;
+    }
+    #office .swiper-button-prev,
+    #office .swiper-button-next,
+    #indoor .swiper-button-prev,
+    #indoor .swiper-button-next,
+    #bathroom .swiper-button-prev,
+    #bathroom .swiper-button-next {
+        display: none;
+    }
+    .swiper-pagination {
+        display: block;
+    }
+    .swiper-pagination5,
+    .swiper-pagination6,
+    .swiper-pagination7 {
+        bottom: -34px!important;
+    }
+    .swiper {
+        margin-bottom: 50px!important;
+    }
+}

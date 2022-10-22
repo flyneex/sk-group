@@ -1,0 +1,108 @@
+// @import '_varmixins.scss';
+
+.bg-about {
+    background: url(../img/about-img.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    @include flex();
+    &::before {
+        @include darken();
+    }
+    h1 {
+        padding: 229px 0 193px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 65px;
+        line-height: 78px;
+        text-transform: uppercase;
+        color: $white;
+        z-index: 1;
+        &::after {
+            content: '';
+            display: block;
+            width: 51px;
+            height: 1px;
+            background-color: $white;
+            margin: 33px auto 0;
+        }
+    }
+}
+#license {
+    .license-box {
+        display: grid;
+        // grid-template-columns: 1fr 830px;
+        // grid-template-columns: minmax(200px, 830px);
+        grid-template-columns: 1fr minmax(200px, 830px);
+        column-gap: 113px;
+        &_item {
+            position: relative;
+            .title {
+                @include title(left, 14px 0);
+                font-style: normal;
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 72px;
+                text-transform: uppercase;
+                color: $black;
+                &:after {
+                    margin: 14px 0;
+                }
+            }
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 23px;
+                color: #666666;
+                margin-top: 40px;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.swiper-pagination4 {
+    display: none;
+}
+
+@media (max-width: 1399px) {
+    .swiper-button-prev3,
+    .swiper-button-next3 {
+        top: 350px;
+    }
+}
+
+@media (max-width: 876px) {
+    #license {
+        .license-box {
+            display: unset;
+            &_item {
+                position: relative;
+                margin-bottom: 45px;
+            }
+        }
+    }
+    .swiper-button-prev3,
+    .swiper-button-next3 {
+        display: none;
+    }
+    .swiper-pagination4 {
+        display: block;
+        bottom: -35px!important;
+    }
+}
+
+@media (max-width: 580px) {
+    #breadcrumbs.bg-about h1 {
+        font-size: 36px;
+        line-height: 55px;
+        text-align: center;
+        padding: 30px 0;
+    }
+}
+
+
+
+
